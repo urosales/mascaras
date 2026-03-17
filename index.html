@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="./mascaras/mascaras.js"></script>
+    <script>
+
+        function ejemplo(e){
+            //Lo mandamos primero a formatear
+            Mascaras.moneda(e);
+
+            //Una vez formateado podemos utilizar el valor por ejemplo para realizar calculos
+            const raw_value = moneda_raw(e.target.value);
+            console.log(raw_value);
+        }
+
+        function moneda_raw(val){
+            const raw_value = val.replace(/,/g, '');
+            return Number(raw_value) || 0;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Número teléfono: 1111111111" oninput="Mascaras.telefono(event)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Número teléfono v2: 11-11-11-11-11" oninput="Mascaras.telefono2(event)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Número teléfono v3: 111-111-1111" oninput="Mascaras.telefono3(event)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Moneda: 000,000.00" oninput="Mascaras.moneda(event)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="CURP: AAAA######HHMMSSXX" oninput="Mascaras.curp(event)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="RFC: AAAA######XXX o AAA######XXX" oninput="Mascaras.rfc(event)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Patrón personalizado: 0-9A-Za-z" oninput="Mascaras.personalizada(event,/[^0-9A-Za-z]+/)"/>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Obtener valor antes de formatear" oninput="ejemplo(event)"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
