@@ -13,9 +13,9 @@ Simplemente llamas la función que necesites o puedes implementar tus propias fu
 
 ## Cómo utilizar 
 
-En el evento oninput llamamaos al metodo respectivo:
+En el evento oninput llamamos al metodo respectivo:
 
-<input type="text" class="form-control" placeholder="Número teléfono: 1111111111" oninput="Mascaras.telefono(event)"/>
+'<input type="text" class="form-control" placeholder="Número teléfono: 1111111111" oninput="Mascaras.telefono(event)"/>'
 
 Mascaras existentes:
 
